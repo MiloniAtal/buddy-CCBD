@@ -24,50 +24,83 @@ const Signin = () => {
   const signInMessage =
       signinProvider === 'cognito' ? 'Sign in with ' : 'Get AWS creds via ';
 
+  // return (
+  //     <Grid
+  //         gridTemplateRows="3rem 100%"
+  //         gridTemplateAreas='
+  //     "heading"
+  //     "main"
+  //     '
+  //     >
+  //       <Cell gridArea="heading">
+  //         <Heading
+  //             level={1}
+  //             style={{
+  //               backgroundColor: currentTheme.colors.greys.grey60,
+  //               height: '3rem',
+  //             }}
+  //             className="app-heading"
+  //         >
+  //           Chat App
+  //         </Heading>
+  //       </Cell>
+  //       <Cell gridArea="main">
+  //         <Flex className="signin-container" layout="stack">
+  //           <Heading
+  //             css="font-size: 1.1875rem; line-height: 2rem;"
+  //             level="5"
+  //           >
+  //             {signInMessage}
+  //             <Select
+  //               name="signinProvider"
+  //               id="signinProvider"
+  //               value={signinProvider}
+  //               options={[
+  //                 { value: 'cognito', label: 'Cognito User Pools' },
+  //                 { value: 'ces', label: 'Credential Exchange Service' },
+  //               ]}
+  //               aria-label="sign in option"
+  //               onChange={e => updateSigninProvider(e.target.value)}
+  //             />
+  //           </Heading>
+  //           {provider}
+  //         </Flex>
+  //       </Cell>
+  //     </Grid>
+  // );
+
   return (
-      <Grid
-          gridTemplateRows="3rem 100%"
-          gridTemplateAreas='
-      "heading"
-      "main"
-      '
-      >
-        <Cell gridArea="heading">
+    <Grid
+        gridTemplateRows="3rem 100%"
+        gridTemplateAreas='
+    "heading"
+    "main"
+    '
+    >
+      <Cell gridArea="heading">
+        <Heading
+            level={1}
+            style={{
+              backgroundColor: currentTheme.colors.greys.grey60,
+              height: '3rem',
+            }}
+            className="app-heading"
+        >
+          BUDDY
+        </Heading>
+      </Cell>
+      <Cell gridArea="main">
+        <Flex className="signin-container" layout="stack">
           <Heading
-              level={1}
-              style={{
-                backgroundColor: currentTheme.colors.greys.grey60,
-                height: '3rem',
-              }}
-              className="app-heading"
+            css="font-size: 1.1875rem; line-height: 2rem;"
+            level="5"
           >
-            Chat App
           </Heading>
-        </Cell>
-        <Cell gridArea="main">
-          <Flex className="signin-container" layout="stack">
-            <Heading
-              css="font-size: 1.1875rem; line-height: 2rem;"
-              level="5"
-            >
-              {signInMessage}
-              <Select
-                name="signinProvider"
-                id="signinProvider"
-                value={signinProvider}
-                options={[
-                  { value: 'cognito', label: 'Cognito User Pools' },
-                  { value: 'ces', label: 'Credential Exchange Service' },
-                ]}
-                aria-label="sign in option"
-                onChange={e => updateSigninProvider(e.target.value)}
-              />
-            </Heading>
-            {provider}
-          </Flex>
-        </Cell>
-      </Grid>
-  );
+          <LoginWithCognito register={userSignUp} login={userSignIn} />
+        </Flex>
+      </Cell>
+    </Grid>
+);
 };
 
 export default Signin;

@@ -39,15 +39,15 @@ const AuthProvider = ({ children }) => {
     }
   };
 
-  const userSignUp = async (username, password) => {
+  const userSignUp = async (username, password, email, info) => {
     try {
       await Auth.signUp({
         username,
         password,
         attributes: {
           // TODO: Utilize input field for email that way we can then have users self confirm after reg.
-          email: 'email@me.com',
-          profile: 'none',
+          email: email,
+          profile: info,
         },
       });
       notificationDispatch({
