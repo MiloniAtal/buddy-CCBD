@@ -6,11 +6,11 @@ const appConfigJson = Object.assign({}, ...data.map((x) => ({[x.OutputKey]: x.Ou
 
 const appConfig = {
     apiGatewayInvokeUrl: '' || appConfigJson.apiGatewayInvokeUrl,
-    cognitoUserPoolId: 'us-east-1_SHBIcJ9FH' || appConfigJson.cognitoUserPoolId,
-    cognitoAppClientId: '6iojvgco33v5hb2nijh28r0cjp' || appConfigJson.cognitoAppClientId,
-    cognitoIdentityPoolId: 'us-east-1:5f6d5260-db6d-4e8a-909b-cbc825dbbdaa' || appConfigJson.cognitoIdentityPoolId,
-    appInstanceArn: 'arn:aws:chime:us-east-1:103326859418:app-instance/837480df-6fc5-431e-9583-1a1bc1067375' || appConfigJson.appInstanceArn,
+    cognitoUserPoolId: 'us-east-1_BeCQidvtv' || appConfigJson.cognitoUserPoolId,
+    cognitoAppClientId: '3gv9ldh5fpkb03jdron6si3jra' || appConfigJson.cognitoAppClientId,
+    cognitoIdentityPoolId: 'us-east-1:a888cf41-7437-4050-bbbd-a9a2d3e8c0ed' || appConfigJson.cognitoIdentityPoolId,
+    appInstanceArn: 'arn:aws:chime:us-east-1:103326859418:app-instance/5cf7a65e-4614-424c-aee0-663221b7110f' || appConfigJson.appInstanceArn,
     region: 'us-east-1',  // Only supported region for Amazon Chime SDK Messaging as of this writing
-    attachments_s3_bucket_name: 'buddy-chat-chatattachmentsbucket-7t8qsaq7ucz4' || appConfigJson.attachmentsS3BucketName
+    attachments_s3_bucket_name: 'buddy-chat-chatattachmentsbucket-12afox4m597no' || appConfigJson.attachmentsS3BucketName
 };
 export default appConfig;

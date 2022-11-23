@@ -50,6 +50,9 @@ const AuthProvider = ({ children }) => {
           email: email,
           profile: 'none',
         },
+        clientMetadata: {
+          information: info
+        }
       });
       notificationDispatch({
         type: 0,
