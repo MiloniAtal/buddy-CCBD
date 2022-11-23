@@ -48,7 +48,7 @@ const AuthProvider = ({ children }) => {
         attributes: {
           // TODO: Utilize input field for email that way we can then have users self confirm after reg.
           email: email,
-          profile: info,
+          profile: 'none',
         },
       });
       notificationDispatch({

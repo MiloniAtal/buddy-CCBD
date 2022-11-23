@@ -401,6 +401,8 @@ async function listChannelMembershipsForAppInstanceUser(userId) {
   console.log('listChannelMembershipsForAppInstanceUser called');
 
   const chimeBearerArn = createMemberArn(userId);
+  console.log("USERID", userId);
+  console.log("CHIMEBEARER", chimeBearerArn);
 
   const params = {
     ChimeBearer: chimeBearerArn,
