@@ -11,6 +11,7 @@ const routes = {
   CHAT: `${rootPath}rooms`,
   DEVICE: `${rootPath}devices`,
   MEETING: `${rootPath}meeting`,
+  HOME: `${rootPath}home`
 };
 
 export default routes;

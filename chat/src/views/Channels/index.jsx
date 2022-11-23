@@ -18,13 +18,20 @@ import { useChatChannelState, useChatMessagingState, } from '../../providers/Cha
 import { useAuthContext } from '../../providers/AuthProvider';
 import { PresenceAutoStatus, PresenceMode, toPresenceMap, toPresenceMessage, } from '../../utilities/presence';
 import { MessageType, Persistence, sendChannelMessage, } from '../../api/ChimeAPI';
+import { BrowserRouter, useHistory } from 'react-router-dom';
 
 import './style.css';
+import routes from '../../constants/routes';
 
 const Channels = () => {
   const currentTheme = useTheme();
   const { activeChannelMemberships } = useChatChannelState();
   const { member, userSignOut } = useAuthContext();
+  const history = useHistory();
+  function handleHomeClick() {
+      history.push(routes.HOME);
+  }
+  console.log("HALO" , member)
   const {
     messages,
     messagesRef,
@@ -140,6 +147,9 @@ const Channels = () => {
 
             <a href="#" onClick={handleLogout()}>
               Log out
+            </a>
+            <a href="#" onClick={handleHomeClick}>
+                Home
             </a>
           </div>
         </Heading>

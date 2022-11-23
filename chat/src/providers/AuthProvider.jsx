@@ -28,6 +28,7 @@ const AuthProvider = ({ children }) => {
 
 
   const userSignOut = async () => {
+    console.log("LOGGING OUT")
     try {
       await Auth.signOut().then(() => {
         AWS.config.credentials = null;

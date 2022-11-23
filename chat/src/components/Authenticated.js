@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: MIT-0
 
 import React, { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { BrowserRouter, useHistory } from 'react-router-dom';
 import { useNotificationDispatch } from 'amazon-chime-sdk-component-library-react';
 import routes from '../constants/routes';
 import { useAuthContext } from '../providers/AuthProvider';
@@ -12,7 +12,7 @@ const Authenticated = ({ children }) => {
   const { isAuthenticated } = useAuthContext();
   const notificationDispatch = useNotificationDispatch();
   const history = useHistory();
-
+  console.log("HERE", isAuthenticated)
   useEffect(() => {
     if (isAuthenticated) {
       //Cleanup notifications
@@ -20,7 +20,8 @@ const Authenticated = ({ children }) => {
         type: 2, // REMOVE_ALL
         payload: {}
       });
-      history.push(routes.CHAT);
+      console.log("HIST", history.history)
+      history.push(routes.HOME);
     } else {
       history.push(routes.SIGNIN);
     }

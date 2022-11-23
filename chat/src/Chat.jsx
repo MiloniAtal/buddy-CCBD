@@ -20,6 +20,7 @@ import { AuthProvider } from './providers/AuthProvider';
 import Signin from './views/Signin';
 import Channels from './views/Channels';
 import Meeting from './views/Meeting';
+import Home from './views/Home';
 import DeviceSetup from './views/DeviceSetup';
 import { MessagingProvider } from './providers/ChatMessagesProvider';
 import { UserPermissionProvider } from './providers/UserPermissionProvider';
@@ -43,6 +44,7 @@ const Chat = () => (
                       <UserPermissionProvider>
                         <Switch>
                           <Route exact path={routes.SIGNIN} component={Signin} />
+                          <Route exact path={routes.HOME} component={Home} />
                           <Route path={routes.DEVICE}>
                             <NoMeetingRedirect>
                               <DeviceSetup />
@@ -56,7 +58,7 @@ const Chat = () => (
                           <Route path={routes.CHAT}>
                             <Channels />
                           </Route>
-                        </Switch>
+                        </Switch> 
                       </UserPermissionProvider>
                     </MessagingProvider>
                   </NavigationProvider>
