@@ -40,7 +40,7 @@ const AuthProvider = ({ children }) => {
     }
   };
 
-  const userSignUp = async (username, password, email, info) => {
+  const userSignUp = async (username, password, email, info, age, pincode, interests) => {
     try {
       await Auth.signUp({
         username,
@@ -51,7 +51,10 @@ const AuthProvider = ({ children }) => {
           profile: 'none',
         },
         clientMetadata: {
-          information: info
+          information: info,
+          age: age,
+          pincode: pincode,
+          interests: JSON.stringify(interests)
         }
       });
       notificationDispatch({
