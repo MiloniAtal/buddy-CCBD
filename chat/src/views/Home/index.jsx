@@ -28,6 +28,10 @@ const Home = () => {
 
     const signInMessage =
         signinProvider === 'cognito' ? 'Sign in with ' : 'Get AWS creds via ';
+//     const params = 'http://buddy-maps.s3-website-us-east-1.amazonaws.com/?userId='
+//                         +member.userId+
+//                         '&username='+ member.username;
+    const params = 'http://buddy-maps.s3-website-us-east-1.amazonaws.com/?username=' + member.username;
 
     function handleLogout() {
         console.log('SIGNING OUT');
@@ -114,20 +118,19 @@ const Home = () => {
                 <a href="#" onClick={handleLogout()}>
                 Log out
                 </a>
-                <a href="#" onClick={handleChatClick}>
-                Chat
-                </a>
+
             </div>
             </Heading>
         </Cell>
         <Cell gridArea="main">
-            <Flex className="signin-container" layout="stack">
-            <Heading
-                css="font-size: 1.1875rem; line-height: 2rem;"
-                level="5"
-            >
-            </Heading>
-            </Flex>
+
+            <a href="#" onClick={handleChatClick}>
+                Chat
+            </a>
+            <a href={params} target = '_blank' >
+                Maps
+            </a>
+
         </Cell>
         </Grid>
 );
