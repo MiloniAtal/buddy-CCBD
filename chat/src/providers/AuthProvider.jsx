@@ -42,6 +42,11 @@ const AuthProvider = ({ children }) => {
 
   const userSignUp = async (username, password, email, info, age, pincode, interests) => {
     try {
+      console.log(interests);
+      console.log(interests.value.length);
+      if(interests.value.length > 3){
+        throw new Error("More than allowed interests chosen");
+      }
       await Auth.signUp({
         username,
         password,
@@ -65,7 +70,8 @@ const AuthProvider = ({ children }) => {
           severity: 'success',
         },
       });
-    } catch (error) {
+    }
+    catch (error) {
       console.log('error signing up:', error);
       notificationDispatch({
         type: 0,

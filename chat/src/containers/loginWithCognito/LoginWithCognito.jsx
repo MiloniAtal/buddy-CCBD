@@ -155,12 +155,13 @@ const LoginWithCognito = (props) => {
   };
 
   const onInterest = (newValue) => {
+    if (newValue.length > 3) {
+      alert('You can only select up to 3 interests, Registration will fail');
+    }
     const newValuesArr = newValue ? newValue.map(item => item.value) : [];
     console.log(newValue);
     console.log(newValuesArr);
     setInterest({ value: newValuesArr });
-    
-    
   };
 
   return (
@@ -269,10 +270,12 @@ const LoginWithCognito = (props) => {
             <Select
               defaultValue={[]}
               isMulti
+              maxValue={3}
               name="options"
               options={options}
               className="basic-multi-select"
               onChange={(e) => onInterest(e)}
+              value={props.value}
               classNamePrefix="select"
             />
           </label>
