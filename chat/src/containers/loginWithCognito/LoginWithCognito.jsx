@@ -23,24 +23,93 @@ const LoginWithCognito = (props) => {
   const [interest, setInterest] = useState('');
   const [age, setAge] = useState('');
   const { login, register } = props;
-
   const options = [
     {
       label: "Music",
       value: "music",
     },
     {
-      label: "Dance",
-      value: "dance",
+      label: "Business & Professional",
+      value: "Business & Professional",
     },
     {
-      label: "Events",
-      value: "events",
+      label: "Food & Drink",
+      value: "Food & Drink",
     },
     {
-      label: "Poetry",
-      value: "poetry",
+      label: "Community & Culture",
+      value: "Community & Culture",
     },
+    {
+      label: "Performing & Visual Arts",
+      value: "Performing & Visual Arts",
+    },
+    {
+      label: "Film, Media & Entertainment",
+      value: "Film, Media & Entertainment",
+    },
+    {
+      label: "Sports & Fitness",
+      value: "Sports & Fitness",
+    },
+    {
+      label: "Health & Wellness",
+      value: "Health & Wellness",
+    },
+    {
+      label: "Science & Technology",
+      value: "Science & Technology",
+    },
+    {
+      label: "Travel & Outdoor",
+      value: "Travel & Outdoor",
+    },
+    {
+      label: "Charity & Causes",
+      value: "Charity & Causes",
+    },
+    {
+      label: "Religion & Spirituality",
+      value: "Religion & Spirituality",
+    },
+    {
+      label: "Family & Education",
+      value: "Family & Education",
+    },
+    {
+      label: "Seasonal & Holiday",
+      value: "Seasonal & Holiday",
+    },
+    {
+      label: "Government & Politics",
+      value: "Government & Politics",
+    },
+    {
+      label: "Fashion & Beauty",
+      value: "Fashion & Beauty",
+    },
+    {
+      label: "Home & Lifestyle",
+      value: "Home & Lifestyle",
+    },
+    {
+      label: "Auto, Boat & Air",
+      value: "Auto, Boat & Air",
+    },
+    {
+      label: "Hobbies & Special Interest",
+      value: "Hobbies & Special Interest",
+    },
+    {
+      label: "School Activities",
+      value: "School Activities",
+    },
+    {
+      label: "Other",
+      value: "Other",
+    },
+    
+
   ];
 
   const onRegister = (e) => {
