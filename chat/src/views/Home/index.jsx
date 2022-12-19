@@ -9,10 +9,15 @@ import LoginWithCognito from '../../containers/loginWithCognito/LoginWithCognito
 import LoginWithCredentialExchangeService from '../../containers/loginWithCredentialExchangeService/LoginWithCredentialExchangeService';
 import { useAuthContext } from '../../providers/AuthProvider';
 import { BrowserRouter, useHistory } from 'react-router-dom';
-
 import './style.css';
 import Channels from '../Channels';
 import routes from '../../constants/routes';
+import {
+    FormField,
+    Input,
+    Button,
+  } from 'amazon-chime-sdk-component-library-react';
+  
 
 const Home = () => {
     const [signinProvider, updateSigninProvider] = useState('cognito');
@@ -90,49 +95,79 @@ const Home = () => {
   // );
 
     return (
-        <Grid
-            gridTemplateRows="3rem 100%"
-            gridTemplateAreas='
-        "heading"
-        "main"
-        '
-        >
-        <Cell gridArea="heading">
-            <Heading
-                level={1}
-                style={{
-                backgroundColor: currentTheme.colors.greys.grey60,
-                height: '3rem',
-                }}
-                className="app-heading"
+        <div style={{ backgroundImage: `url("https://images.app.goo.gl/qsRihPCnEnNXtgo5A")` }}>
+            <Grid
+                gridTemplateRows="3rem 100%"
+                gridTemplateAreas='
+            "heading"
+            "main"
+            '
             >
-            BUDDY
-            <div className="user-block">
-                {/* <a className="user-info" href="#">
-                {member.username || 'Unknown'}
-                <span onClick={handleUserNameCopyClick} className="tooltiptext">
-                    Click to copy UserId to clipboard!
-                </span>
-                </a> */}
+            <Cell gridArea="heading">
+                <Heading
+                    level={1}
+                    style={{
+                    backgroundColor: currentTheme.colors.greys.black,
+                    height: '3rem',
+                    }}
+                    className="app-heading"
+                >
+                BUDDY
+                <div className="user-block">
+                    {/* <a className="user-info" href="#">
+                    {member.username || 'Unknown'}
+                    <span onClick={handleUserNameCopyClick} className="tooltiptext">
+                        Click to copy UserId to clipboard!
+                    </span>
+                    </a> */}
 
-                <a href="#" onClick={handleLogout()}>
-                Log out
-                </a>
+                    <a href="#" onClick={handleLogout()}>
+                    Log out
+                    </a>
+                    <a href="#" onClick={handleChatClick}>
+                    Chat
+                    </a>
+                    <a href={params} target = '_blank' >
+                        Maps
+                    </a>
 
-            </div>
-            </Heading>
-        </Cell>
-        <Cell gridArea="main">
+                </div>
+                </Heading>
+            </Cell>
+            <Cell gridArea="main">
+                <Flex className="signin-container" layout="stack">
+                    <Heading
+                        css="font-size: 1.1875rem; line-height: 2rem;"
+                        level="5"
+                    >
+                        <div className='app-heading'>
+                        Buddy is an application to find your local buddy in real-time. Name your cause and we can find you your buddies right away.
+                        </div>
 
-            <a href="#" onClick={handleChatClick}>
-                Chat
-            </a>
-            <a href={params} target = '_blank' >
-                Maps
-            </a>
+                        <br></br>
 
-        </Cell>
-        </Grid>
+                        <div className='main-page-content'>
+                            How many times have you wondered if you had company for a Target run? How often you wanted some coffee but felt equally lazy to get one yourself? Do you get scared to walk home from your favourite library? Do you wish to directly ask people currently dining at your favourite restaurant to check if they still have your fried ice cream?  
+                        </div>
+                        
+                        <br></br>
+
+                        <div className='app-heading'>
+                        Here is our Buddy! to help you find help from people around.
+
+                        
+                        </div>
+                        
+
+                    
+                    </Heading>
+                </Flex> 
+                
+
+            </Cell>
+            </Grid>
+
+        </div>
 );
 };
 

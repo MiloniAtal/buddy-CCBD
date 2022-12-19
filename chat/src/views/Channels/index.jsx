@@ -129,14 +129,14 @@ const Channels = () => {
         <Heading
           level={5}
           style={{
-            backgroundColor: currentTheme.colors.greys.grey60,
+            backgroundColor: currentTheme.colors.greys.black,
             height: '3rem',
             paddingLeft: '1rem',
             color: 'white',
           }}
           className="app-heading"
         >
-          {activeView === 'Moderator' && moderatedChannel.Name} Chat App
+          {activeView === 'Moderator' && moderatedChannel.Name} Chat
           <div className="user-block">
             <a className="user-info" href="#">
               {member.username || 'Unknown'}
@@ -157,6 +157,7 @@ const Channels = () => {
       <Cell gridArea="side" style={{ height: 'calc(100vh - 3rem)' }}>
         <div
           style={{
+            // backgroundImage: `url("https://images.app.goo.gl/qsRihPCnEnNXtgo5A")`,
             backgroundColor: currentTheme.colors.greys.grey10,
             height: '100%',
             borderRight: `solid 1px ${currentTheme.colors.greys.grey30}`,

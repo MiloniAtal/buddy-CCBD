@@ -31,8 +31,19 @@ div.input span {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 
 .or-span {
     font-size: .875rem;
+}
+
+.margin {
+    margin-bottom: 10rem;
+}
+
+.css-yk16xz-control {
+    margin-top: 1rem;
 }

@@ -167,10 +167,10 @@ const LoginWithCognito = (props) => {
   return (
     <div>
       <Heading
-        css="font-size: 0.875rem !important; line-height: 3rem !important;"
+        css="font-size: 2rem !important; line-height: 3rem !important;"
         level="2"
       >
-        Login or Signup
+        Welcome
       </Heading>
       <form onSubmit={onLogin} className="signin-form">
         <div className="input-container">
@@ -265,9 +265,10 @@ const LoginWithCognito = (props) => {
             showClear
             layout="horizontal"
           />
-          <label>
-            Your interests
-            <Select
+          <label className="or-span">
+            Choose upto 3 categories that you would be interested in!
+          </label >
+          <Select
               defaultValue={[]}
               isMulti
               maxValue={3}
@@ -278,7 +279,10 @@ const LoginWithCognito = (props) => {
               value={props.value}
               classNamePrefix="select"
             />
-          </label>
+
+          
+            
+          
         </div>
         <div className="signin-buttons">
           <Button onClick={onRegister} label="Register" variant="primary" />

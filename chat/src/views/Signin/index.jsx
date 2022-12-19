@@ -81,7 +81,7 @@ const Signin = () => {
         <Heading
             level={1}
             style={{
-              backgroundColor: currentTheme.colors.greys.grey60,
+              backgroundColor: currentTheme.colors.greys.black,
               height: '3rem',
             }}
             className="app-heading"
